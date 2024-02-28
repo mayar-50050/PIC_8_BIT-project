@@ -8,7 +8,10 @@
 #ifndef DEVICE_CONFIG_H
 #define	DEVICE_CONFIG_H
 
-
-
+/*---------------------------- INCLUDE --------------------------*/
+/*----------------------------- MACROS --------------------------*/
+#define _XTAL_FREQ 4000000UL
+/*-------------------------- PROTOTYPES -------------------------*/
+/*-------------------- SELF-DEFINED DATATYPES -------------------*/
 #endif	/* DEVICE_CONFIG_H */
 

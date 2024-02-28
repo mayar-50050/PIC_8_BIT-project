@@ -1,0 +1,119 @@
+////    program_state = lcd_8bit_send_data_pos(&lcd_8,1,1,'A');
+////    program_state = lcd_8bit_send_data_pos(&lcd_8,2,1,'B');
+////    program_state = lcd_8bit_send_data_pos(&lcd_8,3,1,'C');
+////    program_state = lcd_8bit_send_data_pos(&lcd_8,4,1,'D');
+//    //program_state = lcd_8bit_send_string(&lcd_8," Mayar");
+//    program_state = lcd_8bit_send_data(&lcd_8,'A');
+//    program_state = lcd_8bit_send_data(&lcd_8,'B');
+//    program_state = lcd_8bit_send_data(&lcd_8,'C');
+//    program_state = lcd_8bit_send_data(&lcd_8,'D');
+//    
+////    program_state = lcd_4bit_send_string(&lcd_4,"MAYAR");
+//    program_state = lcd_4bit_send_data(&lcd_4,'B');
+//    __delay_ms(2000);
+//    program_state = lcd_4bit_send_data(&lcd_4,'C');
+//    __delay_ms(2000);
+//    program_state = lcd_4bit_send_data(&lcd_4,'D');
+//    __delay_ms(2000);
+//    program_state = lcd_4bit_send_data_pos(&lcd_4,1,1,'A');
+//    program_state = lcd_4bit_send_data_pos(&lcd_4,2,1,'B');
+//    program_state = lcd_4bit_send_data_pos(&lcd_4,3,1,'C');
+//    program_state = lcd_4bit_send_data_pos(&lcd_4,4,1,'D');
+//    program_state = lcd_4bit_send_string(&lcd_4," Mayar");
+//    
+//    program_state = lcd_8bit_send_string_pos(&lcd_8,2,7," Mayar");
+//    program_state = lcd_8bit_send_custome_char(&lcd_8,3, 6,cc1, 1);
+//    program_state = lcd_8bit_send_custome_char(&lcd_8,4, 8,cc2, 2);
+    
+    //program_state = lcd_4bit_initialize(const lcd_4b_t* _lcd);
+    
+//    program_state = lcd_4bit_send_data(&lcd_4, '5');
+//    program_state = lcd_4bit_send_data_pos(&lcd_4, 2, 9, '9');
+//    program_state = lcd_4bit_send_string(&lcd_4, "1234");
+//    program_state = lcd_4bit_send_string_pos(&lcd_4, 3, 2, "row 3");
+    
+    
+    
+    uint8 counter = 0;
+    while(1)
+    {  
+        lcd_8bit_send_command(&lcd_8,_LCD_DISPLAY_SHIFT_RIGHT );
+        lcd_8bit_send_command(&lcd_8,_LCD_ENTRY_MODE_INC_SHIFT_ON);
+        program_state = lcd_8bit_send_string_pos(&lcd_8,2,1,"Mayar");
+        for (counter = 0 ; counter<15 ; counter ++)
+        {
+            //program_state = lcd_8bit_send_string(&lcd_8,"Mayar");
+            __delay_ms(500);
+        }
+        
+        lcd_8bit_send_command(&lcd_8,_LCD_CLEAR_SCREEN);
+        lcd_8bit_send_command(&lcd_8,_LCD_ENTRY_MODE_INC_SHIFT_OFF);
+        for (counter = 0 ; counter<5 ; counter ++)
+        {
+            lcd_8bit_send_command(&lcd_8,_LCD_DISPLAY_ON);
+            program_state = lcd_8bit_send_string_pos(&lcd_8,1,7,"welcome");
+            program_state = lcd_8bit_send_string_pos(&lcd_8,2,7,"   to");
+            program_state = lcd_8bit_send_string_pos(&lcd_8,3,7,"  new");
+            program_state = lcd_8bit_send_string_pos(&lcd_8,4,7,"  york!");
+            __delay_ms(200);
+            lcd_8bit_send_command(&lcd_8,_LCD_DISPLAY_OFF);
+        }
+        lcd_8bit_send_command(&lcd_8,_LCD_DISPLAY_ON);
+        lcd_8bit_send_command(&lcd_8,_LCD_CLEAR_SCREEN);
+        
+        lcd_8bit_send_command(&lcd_8,_LCD_ENTRY_MODE_INC_SHIFT_ON);
+        lcd_8bit_send_command(&lcd_8,_LCD_DISPLAY_SHIFT_LEFT );
+        program_state = lcd_8bit_send_string_pos(&lcd_8,2,1,"Mayar");
+        for (counter = 0 ; counter<15 ; counter ++)
+        {
+           // program_state = lcd_8bit_send_string(&lcd_8,"Mayar");
+            __delay_ms(500);
+        }
+        
+       
+    }
+	
+	
+	/* 
+ * File:   main.c
+ * Author: Mayar Mahmoud; 
+ *
+ * Created on January 27, 2024, 9:03 PM
+ */
+/*---------------------------- INCLUDE --------------------------*/
+#include "main.h"
+/*---------------------------------------------------------------*/
+
+uint8 cc1[] = {14,10,17,17,17,17,31,0};
+uint8 cc2[] = {14,10,17,17,31,31,31,0};
+
+int main(void) 
+{
+    ecu_layer_initialize();
+    
+    
+    uint8 counter = 0;
+    while(1)
+    {  
+        program_state = lcd_8bit_send_string_pos(&lcd_8,1,8,"THIS");
+        program_state = lcd_8bit_send_string_pos(&lcd_8,3,9,"IS");
+        program_state = lcd_8bit_send_string_pos(&lcd_8,2,1,"Mayar");
+        for (counter = 2; counter<16 ; counter ++)
+        {
+            program_state = lcd_8bit_send_string_pos(&lcd_8,2,counter,"Mayar");
+            lcd_8bit_send_data_pos(&lcd_8,2,counter-1," ");
+            //lcd_8bit_send_data_pos(&lcd_8,2,counter+6," ");
+            __delay_ms(500);
+        }  
+        
+        program_state = lcd_8bit_send_string_pos(&lcd_8,2,1,"                    ");
+        for (counter = 16; counter>2 ; counter --)
+        {
+            program_state = lcd_8bit_send_string_pos(&lcd_8,4,counter,"Mayar");
+            //lcd_8bit_send_data_pos(&lcd_8,2,counter+1," ");
+            lcd_8bit_send_data_pos(&lcd_8,2,counter-6," ");
+            __delay_ms(500);
+        }  
+    }
+    return (EXIT_SUCCESS);
+}

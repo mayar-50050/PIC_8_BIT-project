@@ -11,6 +11,8 @@
             <sourceRootList>
                 <sourceRootElem>ECU_Layer</sourceRootElem>
                 <sourceRootElem>MCAL_Layer</sourceRootElem>
+                <sourceRootElem>7-Segment</sourceRootElem>
+                <sourceRootElem>Projects</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
