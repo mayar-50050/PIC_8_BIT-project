@@ -9,12 +9,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S274 . pins motor_state motor_direction ]
 "24 ECU_Layer/DC_motor/ECU_dc_motor.c
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 24:         _dc_motor->pins[0x00U].direction = GPIO_DIRECTION_OUTBUT;
-[c E3001 0 1 .. ]
-[n E3001 . GPIO_DIRECTION_OUTBUT GPIO_DIRECTION_INPUT  ]
+[c E3004 0 1 .. ]
+[n E3004 . GPIO_DIRECTION_OUTBUT GPIO_DIRECTION_INPUT  ]
 "26
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 26:         _dc_motor->pins[0x00U].logic = GPIO_OUTPUT_LOW;
-[c E2997 0 1 .. ]
-[n E2997 . GPIO_OUTPUT_LOW GPIO_OUTPUT_HIGH  ]
+[c E3000 0 1 .. ]
+[n E3000 . GPIO_OUTPUT_LOW GPIO_OUTPUT_HIGH  ]
 "90 ECU_Layer/DC_motor/../../MCAL_Layer/GPIO/HAL_GPIO.h
 [; ;ECU_Layer/DC_motor/../../MCAL_Layer/GPIO/HAL_GPIO.h: 90: Std_ReturnType gpio_pin_initialize(const pin_config_t *_pin_config);
 [v _gpio_pin_initialize `(uc ~T0 @X0 0 ef1`*CS273 ]
@@ -26,8 +26,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _dc_motor_move_left `(uc ~T0 @X0 0 ef1`*CS274 ]
 "87 ECU_Layer/DC_motor/../../MCAL_Layer/GPIO/HAL_GPIO.h
 [; ;ECU_Layer/DC_motor/../../MCAL_Layer/GPIO/HAL_GPIO.h: 87: Std_ReturnType gpio_pin_write_logic(const pin_config_t *_pin_config, logic_t _logic);
-[v _gpio_pin_write_logic `(uc ~T0 @X0 0 ef2`*CS273`E2997 ]
-"54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
+[v _gpio_pin_write_logic `(uc ~T0 @X0 0 ef2`*CS273`E3000 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4620.h
 [; <" PORTA equ 0F80h ;# ">
 "191
 [; <" PORTB equ 0F81h ;# ">
@@ -326,16 +326,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "24
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 24:         _dc_motor->pins[0x00U].direction = GPIO_DIRECTION_OUTBUT;
-[e = . *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 2 -> . `E3001 0 `uc ]
+[e = . *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 2 -> . `E3004 0 `uc ]
 "25
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 25:         _dc_motor->pins[0x01U].direction = GPIO_DIRECTION_OUTBUT;
-[e = . *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 2 -> . `E3001 0 `uc ]
+[e = . *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 2 -> . `E3004 0 `uc ]
 "26
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 26:         _dc_motor->pins[0x00U].logic = GPIO_OUTPUT_LOW;
-[e = . *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 3 -> . `E2997 0 `uc ]
+[e = . *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 3 -> . `E3000 0 `uc ]
 "27
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 27:         _dc_motor->pins[0x01U].logic = GPIO_OUTPUT_LOW;
-[e = . *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 3 -> . `E2997 0 `uc ]
+[e = . *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux 3 -> . `E3000 0 `uc ]
 "29
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 29:         ret = gpio_pin_initialize( &(_dc_motor->pins[0x00U]));
 [e = _ret ( _gpio_pin_initialize (1 -> &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux `*CS273 ]
@@ -452,10 +452,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "70
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 70:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x00U]),GPIO_OUTPUT_HIGH);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 1 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 1 ]
 "71
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 71:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x01U]),GPIO_OUTPUT_LOW);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 0 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 0 ]
 "73
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 73:     }
 }
@@ -506,10 +506,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "94
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 94:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x00U]),GPIO_OUTPUT_LOW);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 0 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 0 ]
 "95
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 95:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x01U]),GPIO_OUTPUT_HIGH);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 1 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 1 ]
 "96
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 96:     }
 }
@@ -560,10 +560,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "117
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 117:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x00U]),GPIO_OUTPUT_LOW);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 0 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 0 ]
 "118
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 118:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x01U]),GPIO_OUTPUT_LOW);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 0 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 0 ]
 "119
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 119:     }
 }
@@ -614,10 +614,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "140
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 140:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x00U]),GPIO_OUTPUT_HIGH);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 1 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 0 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 1 ]
 "141
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 141:         ret = gpio_pin_write_logic(&(_dc_motor->pins[0x01U]),GPIO_OUTPUT_HIGH);
-[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E2997 1 ]
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U __dc_motor 0 * -> -> 1 `ui `ux -> -> # *U &U . *U __dc_motor 0 `ui `ux . `E3000 1 ]
 "142
 [; ;ECU_Layer/DC_motor/ECU_dc_motor.c: 142:     }
 }

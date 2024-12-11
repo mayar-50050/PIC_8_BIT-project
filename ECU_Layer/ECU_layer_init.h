@@ -19,7 +19,7 @@
 #include "Keypad/ECU_keypad.h"
 #include "LCD/ECU_LCD.h"
 
-#include "../Projects/project1_calc/calc.h"
+//#include "../Projects/project1_calc/calc.h"
 /*----------------------------- MACROS --------------------------*/
 
 /*-------------------------- PROTOTYPES -------------------------*/

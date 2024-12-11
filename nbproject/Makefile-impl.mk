@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Applay
+PROJECTNAME=PIC_8_BIT-project
 
 # Active Configuration
 DEFAULTCONF=default

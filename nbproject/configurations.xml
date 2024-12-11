@@ -52,6 +52,11 @@
         <itemPath>MCAL_Layer/compiler.h</itemPath>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -104,11 +109,6 @@
       </logicalFolder>
       <itemPath>MCAL_Layer/device_config.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-    </logicalFolder>
     <itemPath>main.c</itemPath>
     <itemPath>main.h</itemPath>
   </logicalFolder>
@@ -123,16 +123,16 @@
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC18F4620</targetDevice>
+        <targetDevice>PIC18F2550</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.46</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18Fxxxx_DFP" vendor="Microchip" version="1.4.151"/>
+        <pack name="PIC18Fxxxx_DFP" vendor="Microchip" version="1.6.159"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -197,6 +197,7 @@
       </HI-TECH-COMP>
       <HI-TECH-LINK>
         <property key="additional-options-checksum" value=""/>
+        <property key="additional-options-checksumAVR" value=""/>
         <property key="additional-options-code-offset" value=""/>
         <property key="additional-options-command-line" value=""/>
         <property key="additional-options-errata" value=""/>
